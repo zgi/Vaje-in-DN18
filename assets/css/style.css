@@ -1,0 +1,19 @@
+body {
+    background-color: white;
+}
+button {
+    margin: 50px;
+}
+.container-outer  {
+    margin: auto;
+    padding: 30px;
+
+}
+
+.container-inner  {
+    margin: auto;
+    width: 500px;
+    height: 500px;
+    background-color: #a0a0a0;
+    padding: 30px;
+}

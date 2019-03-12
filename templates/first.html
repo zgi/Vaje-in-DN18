@@ -1,0 +1,28 @@
+{% extends "index.html" %}
+{% block guess_capital %}
+<div class="container-outer">
+    <div class="container-inner">
+        {% if country %}
+        <h2>Katero je glavno mesto države: {{ country }}</h2>
+        <form method="post">
+            <input type="text" name="odgovor" placeholder="Vpiši glavno mesto" autofocus required>
+            <input type="submit" value="Potrdi">
+            <input type="hidden" name="country" value="{{ country }}">
+        </form>
+        {% endif %}
+        {% if rezultat %}
+        {{ rezultat }}
+            <button onclick="goBack()">Nazaj</button>
+            <script>
+                function goBack() {
+                window.location.href = '/guess_capital';
+                }
+            </script>
+        {% endif %}
+        {% if img_url %}
+        <br><br>
+        <img src="{{ img_url }}" alt="{{ country }}" height="180" width="500">
+        {% endif %}
+    </div>
+</div>
+{% endblock guess_capital %}

@@ -1,0 +1,17 @@
+{% extends "index.html" %}
+{% block forensics %}
+    <div class="container-outer">
+        <div class="container-inner">
+        <form method="post" id="dna_text">
+            <textarea rows="10" cols="70" name="dna" form="dna_text" placeholder="Vpiši DNA" required autofocus></textarea>
+            <input type="submit" value="Poišči">
+        </form>
+        {% if result %}
+            <ul>Lastnosti osumljenca so:</ul>
+            {% for prop in result %}
+                <li> {{ prop }} </li>
+            {% endfor %}
+        {% endif %}
+        </div>
+    </div>
+{% endblock forensics %}
